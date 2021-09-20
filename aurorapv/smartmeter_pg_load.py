@@ -8,8 +8,8 @@ import gzip
 import logging
 import pandas as pd
 import requests
-from aurora_data import get_vicenergy
-from aurora_pg_load import get_common_args, get_connection
+from .aurora_data import get_vicenergy
+from .aurora_pg_load import get_common_args, get_connection
 from argparse import ArgumentParser, Namespace
 from datetime import datetime, timezone
 from dateutil import tz
@@ -82,7 +82,7 @@ async def create_tables(conn: apg.connection.Connection):
 
 def get_args() -> Namespace:
     ap = get_common_args()
-    ap.add_argument("--data-dir", default="../data/")
+    ap.add_argument("--data-dir", default="./data/")
     ap.add_argument("--pattern", default="Victorian Energy Compare Data*.csv")
     ap.add_argument("--dump-csv", help="Specify CSV file to dump massaged dataframe.")
     ap.add_argument(

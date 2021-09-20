@@ -1,0 +1,6 @@
+__pycache__
+*.csv
+*.db
+*.h5
+*.log
+*.pickle

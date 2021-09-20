@@ -185,7 +185,7 @@ def get_common_args() -> ArgumentParser:
 
     ap = ArgumentParser()
     ap.add_argument("--db", default=DB, help="Name of database.")
-    ap.add_argument("--host", help="Postgres remote host.")
+    ap.add_argument("--host", help="Postgres remote host.", default="localhost")
     ap.add_argument("--user", default=user, help="Override unix username.")
     ap.add_argument(
         "--password",
