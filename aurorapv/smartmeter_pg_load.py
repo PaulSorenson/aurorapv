@@ -47,7 +47,7 @@ localtime (index) ein eout
 Notes
 - the notebook uses the left end of the interval, consider using
 the right side.
-- use timestamptz field and replace the Null timezone from CSV data with 
+- use timestamptz field and replace the Null timezone from CSV data with
 Australia/Melbourne.
 
 The Aurora data is resampled to 30 minute blocks and joined with this.
@@ -82,7 +82,7 @@ async def create_tables(conn: apg.connection.Connection):
 
 def get_args() -> Namespace:
     ap = get_common_args()
-    ap.add_argument("--data-dir", default="~pms/src/pyaurora/data/")
+    ap.add_argument("--data-dir", default="../data/")
     ap.add_argument("--pattern", default="Victorian Energy Compare Data*.csv")
     ap.add_argument("--dump-csv", help="Specify CSV file to dump massaged dataframe.")
     ap.add_argument(

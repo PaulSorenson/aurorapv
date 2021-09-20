@@ -89,12 +89,15 @@ def get_create_sql(table_name: str = TABLE_RAW, time_field: str = TIME_FIELD) ->
 
 
 async def get_connection(
-    host: str, password: str, user: Optional[str] = None, database: str = DB,
+    host: str,
+    password: str,
+    user: Optional[str] = None,
+    database: str = DB,
 ):
     if password is None:
-        raise Exception("datbase password must not be None")
+        raise Exception("database password must not be None")
     if host is None:
-        raise Exception("datbase host must not be None")
+        raise Exception("database host must not be None")
     user = getuser() if user is None else user
     log.info(f"user: {user} db: {database} host: {host}")
     return await apg.connect(user=user, database=database, host=host, password=password)
