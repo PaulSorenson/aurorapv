@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aurorapv"
-version = "0.1.0"
+version = "0.0.0"
 description = ""
 authors = ["Paul Sorenson <pms@home.metrak.com>"]
 
@@ -11,6 +11,14 @@ python = "^3.9"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 
+[tool.semver]
+enable = true
+write_to = "aurorapv/version.py"
+
+# [tool.poetry-dynamic-versioning]
+# enable = true
+
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+# requires = ["poetry-core>=1.0.0", "poetry-scmver", "poetry-semver"]
+requires = ["poetry-core>=1.0.0", "poetry-semver"]
 build-backend = "poetry.core.masonry.api"
