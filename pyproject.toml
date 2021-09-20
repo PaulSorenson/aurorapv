@@ -2,9 +2,10 @@
 name = "aurorapv"
 version = "0.1.0"
 description = ""
-authors = ["Paul Sorenson <pms@luke.home.metrak.com>"]
+authors = ["Paul Sorenson <pms@home.metrak.com>"]
 
 [tool.poetry.dependencies]
+keyring = "^21.8"
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
